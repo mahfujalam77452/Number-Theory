@@ -1,0 +1,11 @@
+//we can find the lcm using this formula.
+int lcm ( int a, int b ) {
+    return ( a * b ) / gcd ( a, b );
+}
+//But take a look at the situation to compute LCM(2^20,2^15)
+//it will overflow the int 
+//so in this situation we can compute it using this formula.
+int lcm ( int a, int b ) {
+    return ( a / gcd ( a, b ) ) * b;
+}
+//since a and b both are divisible by gcd(a,b). 
