@@ -2,3 +2,10 @@ int gcd ( int a, int b ) {
     if ( b == 0 ) return a;
     return gcd ( b, a % b );
 }
+//Time complexity of the gde function is O(log(A) + long(B)).
+//Here the log function is 10 based.
+//The gcd of of there number GCD(a,b,c) can be computed as gcd(gcd(a,b),c).
+//gcd(a,b)=gcd(a-b,b)
+//To find out the gcd of negative value .we will use only the absolute value of the number s
+//Or we will use the absolute value of the return number.
+//The gcd of gcd(0,0) is INF.
