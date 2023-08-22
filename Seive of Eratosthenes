@@ -1,0 +1,24 @@
+//for generate prime number up  to N;
+const int N = 1e5 + 5;
+vector<int>prime;
+char seive[N];
+void PrimeSeive(int n){
+    seive[1]=0;seive[0]=1;//0 and 1 are not prime .
+    prime.push_back(2);
+    for(int i=4;i<=n;i+=2)seive[i]=1;
+    int sqrtn=sqrt(n);
+    for(int i=3;i<=sqrtn;i+=2){
+        if(seive[i]==0){
+            for(int j=i*i;j<=n;j+=2*i)seive[j]=1;
+        }
+    }
+    for(int i=3;i<=n;i+=2)if(seive[i]==0)prime.push_back(i);
+}
+/*
+Some lines from the code above can be omitted depending on the situation.
+But as a whole, the above code gives us two products,
+a vector<int> prime which contains all generated primes 
+and a char[] sieve that indicates whether a particular value is prime or not. 
+We will need the sieve array for optimizations in other algorithms.
+*/
+//The time complexity is O(Nlog(long(N))).
