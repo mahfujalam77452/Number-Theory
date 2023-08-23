@@ -1,0 +1,6 @@
+/*
+A highly composite Number (HCN) is an integer which has more divisors then any smaller 
+positive integer.
+if NOD(N)>NOD(i), where 0<i<N, then N is HCN.
+*/
+//Problem: Given an integer N. Find the largest HCN which is <=N.
