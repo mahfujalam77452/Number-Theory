@@ -23,3 +23,4 @@ int segmentedSieve(int a,int b){
     return cnt;
     
 }
+//The number of total prime number between 1~N is N/(ln(N)).
