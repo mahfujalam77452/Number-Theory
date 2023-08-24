@@ -1,0 +1,33 @@
+//Divisor Summatory function is for finding the sum of number of divisors 
+    //from 1 to N.
+    //Here 3 functions to find it with different complexity.
+    int SNOD( int n ) {
+    int res = 0;
+    for ( int i = 1; i <= n; i++ ) {
+        res += NOD(i);//This is not stl of c++. it is a function for calculate NOD
+                       //of i.
+    }
+    return res;
+}
+//time complexity-> O(n*(n^(1/2)/ln(n^0.5))).
+
+int SNOD( int n ) {
+    int res = 0;
+    for ( int i = 1; i <= n; i++ ) {
+        res += n/i;
+                      
+    }
+    return res;
+}
+//time complexity O(N).
+int SNOD( int n ) {
+    int u=sqrt(n);
+    int res = 0;
+    for ( int i = 1; i <= u; i++ ) {
+        res += (u/i)-i;//finding number of  parir(a<b).
+    }
+    res*=2;//as the number of pair (a>b)=number of pair (a<b)
+    res+=u;//as number of pair (a,b)where a=b is equal to u.
+    return res;
+}
+//time complexity O(sqrt(N));
