@@ -1,0 +1,7 @@
+res=a%m;
+if(res<0)res+=m;
+//Modular Operation is as expensive as a division operator.It takes more time than to perform addition and subtraction.
+//So it is better to avoid using modulo operation where possible.
+//example:
+res=a+b;
+if (res>=m)res-=m;
