@@ -3,6 +3,8 @@ Extended Euclidean Algorithm is an extension of Euclidean Algorithm ,
 which finds two things for integer a and b:
 1. It finds the value of GCD(a,b).
 2. It finds two integers x and y such that, ax+by=gcd(a,b)
+here gcd(a,b) is the smallest number that can be extended as ax+by
+other value of ax+by will be the multiple of gcd(a,b)
 */
 int ext_gcd(int a,int b,int *X,int *Y)//Pass by reference.
 {
