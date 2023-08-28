@@ -1,0 +1,35 @@
+/*
+Given the integers A,B,C,D,
+find a pair of (x,y) such that it satisfies the equation Axy+Bx+Cy=D.
+*/
+//here is the code to find the number of such pair.
+bool isValid(int a,int b,int c,int p,int div){
+     if ( ( ( div - c )% a ) != 0 ) return false; //x = (div - c) / a
+    if ( ( (p-b*div) % (a*div) ) != 0 ) return false;// y = (p-b*div) /(a*div)
+    return true;
+}
+int HyperbolicDiophentine(int a,int b,int c,int d){
+    int p=a*d+b*c;
+    int res =0;
+    if (p==0){
+        if(-c%a==0)return -1;//Infinite solution
+        else if(-b%a==0)return -1;//Infinite solution
+        else return 0;
+        
+    }
+    else{
+        
+        int sqrtn=sqrt(p);
+        for(int i=1;i<=sqrtn;i++){
+            if(p%i==0){
+              if(isValid(a,b,c,p,i))res++;
+              if(isValid(a,b,c,p,-i))res++;
+              if(p/i!=i){
+                  if(isValid(a,b,c,p,p/i))res++;
+                  if(isValid(a,b,c,p,-p/i))res++;
+              }
+            }
+        }
+    }
+    return res;
+}
