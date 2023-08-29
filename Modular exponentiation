@@ -13,3 +13,15 @@ int bigModRecur(int b,int p,int m)
         return b*bigModRecur(b,p-1,m)%m;
     }
 }
+//here is the same work with Repeated Squaring Method
+int bigModRecur(int b,int p,int m)
+{
+   int cur=1%m; int x=b%m;
+   while(p){
+       if(p&1)cur=(cur*x)%m;
+       x=(x*x)%m;
+       p>>=1;
+   }
+   return cur;
+}
+//Time complexity same as O(log(p));
