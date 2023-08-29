@@ -1,0 +1,60 @@
+//there are 3 ways
+//1'st way is to iterate each number and factorize it.
+vector<int> prime;
+int primeFactor[SIZE]; // Size should be as big as N
+ 
+void factorize( int n ) {
+    int sqrtn = sqrt ( n );
+    for ( int i = 0; i < prime.size() && prime[i] <= sqrtn; i++ ) {
+        if ( n % prime[i] == 0 ) {
+            while ( n % prime[i] == 0 ) {
+                n /= prime[i];
+                primeFactor[ prime[i] ]++; // Increment global primeFactor array
+            }
+            sqrtn = sqrt ( n );
+        }
+    }
+    if ( n != 1 ) {
+        primeFactor[n]++;
+    }
+}
+ 
+void factFactorize ( int n ) {
+    for ( int i = 2; i <= n; i++ ) {
+        factorize( i );
+    }
+ 
+    // Now We can print the factorization
+    for ( int i = 0; i < prime.size(); i++ ) {
+        printf ( "%d^%d\n", prime[i], primeFactor[ prime[i] ] );
+    }
+}
+//We can reduce the time coplexity by doing it using the method how many time a prime number exist in N!
+void factFactorize ( int n ) {
+    for ( int i = 0; i < prime.size() && prime[i] <= n; i++ ) {
+        int p = prime[i];
+        int freq = 0;
+ 
+        while ( n / p ) {
+            freq += n / p;
+            p *= prime[i];
+        }
+ 
+        printf ( "%d^%d\n", prime[i], freq ); // Printing prime^freq which is factor of N!
+    }
+}
+//But sometime it can be make overflow problem.To reduce the possiblity of overflow we can implement it below method.
+void factFactorize ( int n ) {
+    for ( int i = 0; i < prime.size() && prime[i] <= n; i++ ) {
+        int x = n;
+        int freq = 0;
+ 
+        while ( x / prime[i] ) {
+            freq += x / prime[i];
+            x = x / prime[i];
+        }
+ 
+        printf ( "%d^%d\n", prime[i], freq );
+    }
+}
+//Overall it is the best implementation.
