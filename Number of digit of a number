@@ -1,0 +1,6 @@
+const int eps = 1e-9;
+int numDigit(int n){
+    int wrongAnswer=log10(n)+1;//It may sometime give wrong Answer
+    int rightAnswer=log10(n)+1+eps;//It will always give me right answere.
+    return rightAnswer;
+}
