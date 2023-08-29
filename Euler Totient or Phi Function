@@ -24,3 +24,6 @@ int eulerphi(int n)
     }
     return res;
 }
+//Number of elements e such that gcd(e,n)=d is equal to ϕ(n/d)
+//Sum of integers that are coprime to n equals to (ϕ(n)*n)/2
+//ϕ(n) is always even.
