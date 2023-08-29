@@ -1,0 +1,19 @@
+const int eps = 1e-9;
+//number of digit of factorial N! .10 based.
+int FactorialDigit(int n){
+    double x=0;
+    for(int i=1;i<=n;i++){
+        x+=log10(i);
+    }
+    int res=x+1+eps;
+    return res;
+}
+//number of digit of factorial N! in any based.
+int factorialDigitExtended(int n,int base){
+    double x=0;
+    for(int i=1;i<=n;i++){
+        x+=log10(i)/log10(base);
+    }
+    int res=x+1+eps;
+    return res;
+}
