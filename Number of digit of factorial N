@@ -1,4 +1,4 @@
-const int eps = 1e-9;
+const double eps = 1e-9;
 //number of digit of factorial N! .10 based.
 int FactorialDigit(int n){
     double x=0;
