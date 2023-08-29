@@ -1,0 +1,26 @@
+/*
+In number theory, Euler’s totient function (or Euler’s phi function),
+denoted as ϕ(n), is an arithmetic function that counts the positive integers 
+less than or equal to n that are relatively prime/co-prime to n.
+*/
+int eulerphi(int n)
+{
+    int res=n;
+    int sqrtn=sqrt(n);
+    for(int i=0;i<prime.size()&&prime[i]<=sqrtn;i++){
+        if(n%prime[i]==0){
+            while(n%prime[i]==0){
+            n/=prime[i];
+            }
+        res/=prime[i];
+        res*=prime[i]-1;
+        sqrtn=sqrt(n);
+        }
+        
+    }
+    if(n!=1){
+        res/=n;
+        res*=(n-1);
+    }
+    return res;
+}
