@@ -1,0 +1,15 @@
+//time complexity O(log(p)).
+int bigModRecur(int b,int p,int m)
+{
+    //Base case
+    if(p==0)return 1%m;
+    //p is even
+    if(p%2==0){
+        int y=bigModRecur(b,p/2,m);
+        return (y*y)%m;
+    }
+    else{
+         // b^p = b * b^(p-1)
+        return b*bigModRecur(b,p-1,m)%m;
+    }
+}
