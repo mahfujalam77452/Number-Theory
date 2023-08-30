@@ -1,0 +1,2 @@
+//If the prime factorization of n is p1^a1×p2^a2×…pk^ak, then
+//g(n)=∏(i=0 to k){(ai+1)*pi^ai–ai*p^(ai−1)}
