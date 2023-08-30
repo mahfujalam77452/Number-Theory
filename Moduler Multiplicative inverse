@@ -1,0 +1,13 @@
+//When M is a prime number
+int x=bigMod(a,M-2,M)//finding a^M-2 respect to modulo M by Moduler exponentiation
+//Time complexity O(log(M)).
+//When M is not a prime.
+int modInv(int a,int m){
+    int x,y;
+    ext_gcd(a,m,&x,&y);
+    // Process x so that it is between 0 and m-1
+    x%=m;
+    if(x<0)x+=m;
+    return x;
+}
+//time complexity O(logA +logB).here log is 10 based.
