@@ -1,3 +1,17 @@
+//Easy way
+
+int nCr[32][32];
+    nCr[0][0] = 1;
+    
+    for(int i = 1;i<=31;i++) {
+        
+        for(int j = 0; j <= 31 ; j ++) {
+            
+            nCr[i][j] = (j-1 >= 0?nCr[i-1][j-1]:0) + (i-1 >= 0? nCr[i-1][j] : 0);//nCr + nC(r+1) = (n+1)Cr
+        }
+    }
+
+
 #include<bits/stdc++.h>
 using namespace std;
 
