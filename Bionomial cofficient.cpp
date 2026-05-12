@@ -7,7 +7,7 @@ int nCr[32][32];
         
         for(int j = 0; j <= 31 ; j ++) {
             
-            nCr[i][j] = (j-1 >= 0?nCr[i-1][j-1]:0) + (i-1 >= 0? nCr[i-1][j] : 0);//nCr + nC(r+1) = (n+1)Cr
+            nCr[i][j] = (j-1 >= 0?nCr[i-1][j-1]:0) + (i-1 >= 0? nCr[i-1][j] : 0);//nCr + nC(r+1) = (n+1)C(r+1)
         }
     }
 
